@@ -1,15 +1,3 @@
-resource "azurerm_public_ip" "main" {
-  name                = "${var.component}-ip"
-  resource_group_name = data.azurerm_resource_group.main.name
-  location            = data.azurerm_resource_group.main.location
-  allocation_method   = "Dynamic"
-  sku                 = "Basic"
-
-
-  tags = {
-    component = var.component
-  }
-}
 
 resource "azurerm_network_interface" "main" {
 
@@ -57,6 +45,19 @@ resource "azurerm_network_security_group" "main" {
 
   tags = {
     environment = var.component
+  }
+}
+
+resource "azurerm_public_ip" "main" {
+  name                = "${var.component}-ip"
+  resource_group_name = data.azurerm_resource_group.main.name
+  location            = data.azurerm_resource_group.main.location
+  allocation_method   = "Dynamic"
+  sku                 = "Basic"
+
+
+  tags = {
+    component = var.component
   }
 }
 
