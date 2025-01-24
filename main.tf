@@ -1,5 +1,5 @@
 module "vm" {
-    for.each     = var.tools
+    for_each     = var.tools
     source       = "./vm-module"
     component    = each.key
     ssh_username = var.ssh_username
