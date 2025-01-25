@@ -1,3 +1,4 @@
+default:
     git pull
     terraform init
-    terraform apply -auto-approve -var token=$(token)
+    terraform apply -auto-approve -var token_name=$(token_name)
