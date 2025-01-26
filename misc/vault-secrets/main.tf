@@ -14,7 +14,7 @@ resource "vault_kv_secret" "secret" {
 variable "secrets" {
   default = {
     infra = {
-      shh = {
+      ssh = {
         admin_username = "pavan-roboshop",
         admin_password = "Devops@123456"
       }
