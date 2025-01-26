@@ -8,7 +8,7 @@ terraform {
     resource_group_name  = "project-setup-1"
     storage_account_name = "d82tfstate"
     container_name       = "vault-tool-tf"
-    key                  = "dev.tfstate"
+    key                  = "vault-dev.tfstate"
   }
 }
 
