@@ -16,7 +16,9 @@ variable "secrets" {
       }
     }
     roboshop-dev = {
-      frontend = {}
+      frontend = {
+        catelogue_endpoint = "http://catalogue-dev.azdevops2704.online:8080"
+      }
       catalogue = {}
     }
   }
