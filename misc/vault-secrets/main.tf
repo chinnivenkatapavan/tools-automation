@@ -18,10 +18,10 @@ variable "secrets" {
     roboshop-dev = {
       frontend = {
         catelogue_endpoint = "http://catalogue-dev.azdevops2704.online:8080"
-        user_endpoint = "http://user-{{ ENV }}.azdevops2704.online:8080"
-        cart_endpoint = "http://cart-{{ ENV }}.azdevops2704.online:8080"
-        payment_endpoint = "http://payment-{{ ENV }}.azdevops2704.online:8080"
-        shipping_endpoint = "http://shipping-{{ ENV }}.azdevops2704.online:8080"
+        user_endpoint = "http://user-dev.azdevops2704.online:8080"
+        cart_endpoint = "http://cart-dev.azdevops2704.online:8080"
+        payment_endpoint = "http://payment-dev.azdevops2704.online:8080"
+        shipping_endpoint = "http://shipping-dev.azdevops2704.online:8080"
       }
     }
   }
