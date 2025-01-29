@@ -36,6 +36,10 @@ variable "secrets" {
       catalogue = {
         MONGO = "true"
         MONGO_URL = "mongodb://mongodb-dev.azdevops2704.online:27017/catalogue"
+        DB_TYPE = "mongo"
+        APP_GIT_URL = "https://github.com/roboshop-devops-project-v3/catalogue"
+        DB_HOST = "mongodb-dev.azdevops2704.online"
+        SCHEMA_FILE= "db/master-data.js"
       }
       user = {
         MONGO=true
