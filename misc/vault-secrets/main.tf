@@ -61,7 +61,7 @@ variable "secrets" {
         DB_PASS       = "RoboShop@1"
       }
       payment = {
-        CART_HOST = "cart-DEV.azdevops2704.online"
+        CART_HOST = "cart-dev.azdevops2704.online"
         CART_PORT = "8080"
         USER_HOST = "user-dev.azdevops2704.online"
         USER_PORT = "8080"
