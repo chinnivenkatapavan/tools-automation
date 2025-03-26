@@ -15,6 +15,10 @@ variable "tools" {
             port = 8200
             }
 
+        github-runner = {
+            port = 443
+        }
+
         }
 
     }
