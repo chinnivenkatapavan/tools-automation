@@ -1,0 +1,33 @@
+#Creating User in Github by using Ansible
+- name: Add github runner user
+  ansible.builtin.user:
+    name: github-runner
+    home: /github-runner
+
+#Downloading runner path
+- name: Download runner software
+  ansible.builtin.unarchive:
+    src: https://github.com/actions/runner/releases/download/v2.323.0/actions-runner-linux-x64-2.323.0.tar.gz
+    dest: /github-runner
+    owner: github-runner
+    group: github-runner
+    remote_src: yes
+
+#Instaling libicu package in VM
+- name: Install libicu
+  ansible.builtin.dnf:
+    name: libicu
+    state: installed
+
+#Connect to github
+- name: Configure runner
+  ansible.builtin.shell: ./config.sh --url https://github.com/Training-devops-team --token AYAIMJM7KVKA2XEAB4FBD33H5HUMU --runnergroup Default --name github-runner-az --labels self-hosted --work _work --repalce
+  args:
+    chdir: /github-runner
+  become_user: github-runner
+
+#Install and Start github-runner
+- name: Start Github Runner
+  ansible.builtin.shell: ./svc.sh install ; ./svc.sh start
+  args:
+    chdir: /github-runner
