@@ -114,4 +114,8 @@ resource "azurerm_virtual_machine" "main" {
   tags = {
     component = var.component
   }
+
+  identity {
+    type = "SystemAssigned"  #To ignore login manual and changes to automation
+  }
 }
