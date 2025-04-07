@@ -25,9 +25,26 @@
   args:
     chdir: /github-runner
   become_user: github-runner
+  ignore_errors: yes
+
+#Copy service file to path
+- name: Copy service
+  ansible.builtin.template:
+    src: github-runner.service
+    dest: /etc/systemd/system/github-runner.service
+
+#Starting service
+- name: Start Service
+  ansible.builtin.systemd_service:
+    name: github-runner
+    state: started
+    enabled: yes
+    daemon-reload: yes
 
 #Install and Start github-runner
-- name: Start Github Runner
-  ansible.builtin.shell: ./svc.sh install ; ./svc.sh start
-  args:
-    chdir: /github-runner
+#- name: Start Github Runner
+#  ansible.builtin.shell: ./svc.sh install ; ./svc.sh start
+#  args:
+#    chdir: /github-runner
+
+#
